@@ -5,10 +5,8 @@ Tweetbot is a bot that allows you to take a pictures regularly and post it on tw
 The easiest way to install it is to clone this repository in your "Documents" folder.
 If you prefer to install it somewhere else, you'll have to change some lines of code.
 
-* get_pic.py line 12  ``` pygame.image.save(img, homedir + "/path/you/want/from/home/$USER/tweetbot/pic.jpg") ```
-* getQuote.py line 13 ``` with open(homedir + "/path/you/want/from/home/$USER/tweetbot/quote.txt", "w") as f: ```
 * savePic.sh line 3   ``` cp /home/$USER/Documents/tweetbot/pic.jpg /home/$USER/Path/you/want/tweetbot/imgs/$NOW.jpg ```
-* tweet.py line 10    ``` appdir = "/path/you/want/tweetbot/" ```
+* settings.py line 2    ``` appdir = "/path/you/want/tweetbot/" ```
 
 
 You may need to install python3 requirements, to do so, simply type ``` pip3 install -r requirements.txt ``` once in the tweetbot folder
@@ -25,10 +23,10 @@ Then you'll get :
 
 Simply copy-paste these keys in the corresponding vars in tweet.py file
 
-Then you simply need to add automatic tasks with crontab, which will first run 
+Then you simply need to add automatic tasks with crontab, which will first run
 
 ```
-python3 /path/to/your/folder/get_pic.py /path/to/your/webcam 
+python3 /path/to/your/folder/get_pic.py /path/to/your/webcam
 ```
 
 and then

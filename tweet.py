@@ -1,19 +1,17 @@
 import os
 from twython import Twython
-import os.path
+from settings import homedir, appdir
 
 tweetStr = "a"*256  # Satisfying the condition to enter the loop
-homedir = os.path.expanduser("~")
-appdir = "/Documents/tweetbot/"
 
 while len(tweetStr) > 255:
     try:
         os.system("python3 {}{}getQuote.py".format(homedir, appdir))
-    except Exception:
+    except Exception:  # In case the quote couldn't be fetched
         with open("{}{}quote.txt".format(homedir, appdir), "w") as f:
             f.write("I have nothing to tell you. \n")
-    quote = " ".join(open("{}{}quote.txt".format(homedir, appdir)).readlines())
 
+    quote = " ".join(open("{}{}quote.txt".format(homedir, appdir)).readlines())
     tweetStr = quote + "\n #growth #basilic"
 
 CONSUMER_KEY = 'SUPERSECRET'

@@ -1,12 +1,10 @@
 import pygame
 import pygame.camera
 import sys
-import os.path
-
-homedir = os.path.expanduser("~")
+from settings.py import homedir, appdir, CAMERA_RES
 
 pygame.camera.init()
-cam = pygame.camera.Camera(sys.argv[1], (720, 720))
+cam = pygame.camera.Camera(sys.argv[1], CAMERA_RES)
 cam.start()
 img = cam.get_image()
-pygame.image.save(img, homedir + "/Documents/tweetbot/pic.jpg")
+pygame.image.save(img, "{}{}/pic.jpg".format(homedir, appdir))
