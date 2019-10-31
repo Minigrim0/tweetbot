@@ -5,8 +5,8 @@ Tweetbot is a bot that allows you to take a pictures regularly and post it on tw
 The easiest way to install it is to clone this repository in your "Documents" folder.
 If you prefer to install it somewhere else, you'll have to change some lines of code.
 
-* savePic.sh line 3   ``` cp /home/$USER/Documents/tweetbot/pic.jpg /home/$USER/Path/you/want/tweetbot/imgs/$NOW.jpg ```
-* settings.py line 2    ``` appdir = "/path/you/want/tweetbot/" ```
+* savePic.sh line 3  ``` cp /home/$USER/Documents/tweetbot/pic.jpg /home/$USER/Path/you/want/tweetbot/imgs/$NOW.jpg ```
+* settings.py line 2 ``` appdir = "/path/you/want/tweetbot/" ```
 
 
 You may need to install python3 requirements, to do so, simply type ``` pip3 install -r requirements.txt ``` once in the tweetbot folder
