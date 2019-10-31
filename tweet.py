@@ -1,26 +1,20 @@
 import os
-import sys
-import time
-import requests
 from twython import Twython
 import os.path
 
-tweetStr = "a"*256 #Satisfying the condition to enter the loop
+tweetStr = "a"*256  # Satisfying the condition to enter the loop
 homedir = os.path.expanduser("~")
 appdir = "/Documents/tweetbot/"
 
 while len(tweetStr) > 255:
-        try:
-            os.system("python3 " + homedir + appdir + "getQuote.py")
-        except:
-            with open(homedir + appdir + "quote.txt", "w") as f:
-                f.write("I have nothing to tell you. \n")
-        quote = " ".join(open(homedir + appdir + "quote.txt").readlines())
-        print(quote)
+    try:
+        os.system("python3 {}{}getQuote.py".format(homedir, appdir))
+    except Exception:
+        with open("{}{}quote.txt".format(homedir, appdir), "w") as f:
+            f.write("I have nothing to tell you. \n")
+    quote = " ".join(open("{}{}quote.txt".format(homedir, appdir)).readlines())
 
-        tweetStr = quote + "\n #growth #basilic"
-
-        print("len :", len(tweetStr))
+    tweetStr = quote + "\n #growth #basilic"
 
 CONSUMER_KEY = 'SUPERSECRET'
 CONSUMER_SECRET = 'YOULLNEVERFIND'
