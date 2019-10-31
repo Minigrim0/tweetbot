@@ -9,5 +9,5 @@ start = quote.text.index("\"/quote/")  # find first quote occurence
 start = quote.text.index(">", start, len(quote.text)) + 1
 end = quote.text.index("</a>", start, len(quote.text))
 
-with open("{}{}/quote.txt".format(homedir, appdir), "w") as f:
+with open("{}{}quote.txt".format(homedir, appdir), "w") as f:
     f.write(quote.text[start:end] + "\n")
